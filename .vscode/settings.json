@@ -3,4 +3,8 @@
   "deno.import_intellisense_origins": {
     "https://deno.land": true
   },
+  "editor.formatOnSave": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  }
 }
