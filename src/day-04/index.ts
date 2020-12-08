@@ -23,11 +23,13 @@ const fieldValidator: Validator = {
 
 // part A
 
-function isPassport(id: Passport | {}): boolean {
+function isPassport(id: Passport | Record<string, string>): boolean {
   return Object.keys(fieldValidator).every((k) => id.hasOwnProperty(k));
 }
 
-function parseFields(passportString: string): Passport | {} {
+function parseFields(
+  passportString: string,
+): Passport | Record<string, string> {
   const fields = passportString.match(passportRegex) || [];
   return fields
     .map((kv) => kv.split(":"))

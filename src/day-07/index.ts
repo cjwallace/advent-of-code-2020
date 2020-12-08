@@ -60,7 +60,10 @@ type BagCount = {
   count: number;
 };
 
-function getContainedBags(allBags: any, color: string): number {
+function getContainedBags(
+  allBags: Record<string, string[]>,
+  color: string,
+): number {
   if (!allBags[color]) return 0;
 
   const parsedBags = allBags[color].map((bag: string) => parseNumberBags(bag));
